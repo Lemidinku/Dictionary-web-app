@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope');
+:root{
+    --bg-color: white;
+    --font-color: black;
+    --header-color: rgb(206, 246, 246);
+    --bg-purple: rgba(194, 123, 245, 0.2);
+    --bg-purple-hover: rgba(194, 123, 245, 0.7);
+    --font-purple:  #aa42f5;
+}
+ @media (prefers-color-scheme: dark) {
+    :root{
+    
+    --bg-color: black;
+    --font-color: white;
+    --header-color: rgb(24, 41, 41);
+    }
+} 
+
+
+body {
+    font-family: Manrope, Tahoma;
+    margin: 0;
+    color: var(--font-color);
+    background-color:var(--bg-color);
+    box-sizing: border-box;
+}
+.header {
+    background-color: var(--header-color);
+    width: 100vw;
+    height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    letter-spacing: 2px;
+    
+    
+}
+form {
+    max-width: 700px;
+    margin: 20px auto;
+    position: relative;
+    margin-bottom: 20px;
+
+
+}
+.word-input {
+    border: none;
+    padding-left: 20px;
+    background-color:var(--bg-purple);
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    color: var(--font-color)
+}
+
+
+.search-button {
+    background-color:unset;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    font-size: 20px;
+    color: var(--font-purple);
+
+}
+.container {
+    max-width: 700px;
+    min-height: 72vh;
+    margin:auto;
+}
+.word-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    color:var(--font-purple);
+
+}
+
+.word-info h1 {
+    font-size: 40px;
+    margin: 0;
+    text-transform: capitalize;
+    color: var(--font-color)
+}
+
+
+.pronounce-button {
+    border: none;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color:var(--bg-purple);
+    font-size: 25px;
+    color:var(--font-purple);
+}
+
+.pronounce-button:hover {
+    background-color: var(--bg-purple-hover);
+    box-shadow: 0px 0px 25px 5px var(--font-purple);
+
+    
+}
+.meaning {
+    margin-bottom: 40px;
+
+}
+
+.definition {
+    margin: 20px 0;
+    margin-left: 8%;
+    display: list-item;
+}
+
+.definition-sentence {
+    font-weight: 800;
+}
+
+
+.synonym-display, .antonym-display {
+    margin: auto;
+    margin-left: 8%;
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+.synonym, .antonym {
+    margin: 0 10px;
+    font-weight: 800;
+    color:var(--font-purple);
+    cursor: pointer;
+    border: none;
+
+}
+.synonym:hover, .antonym:hover {
+    background-color: rgba(170, 66, 245,0.5);
+    color: white;
+    border-radius: 5px;
+    
+    box-shadow: 0px 0px 25px 5px var(--font-purple);
+    ;
+
+}
+
+footer {
+    text-align: center;
+    height: 50px;
+    /* max-width: 700px; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--header-color);
+
+    /* temporary
+    color: black; */
+}
+
+@media (max-width:375px) {
+   
+    .developer {
+        visibility: hidden;
+        position: relative;
+      }
+      
+      .developer::after {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "LD";
+      }
+}
