@@ -1,4 +1,4 @@
-Live server: https://subtle-truffle-d3e105.netlify.app/
+Live server: [Dictionary web app](https://dictionary-lemidinq.netlify.app/)
 
 # Dictionary Web App
 
