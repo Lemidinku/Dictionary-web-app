@@ -7,6 +7,25 @@ let linked_words;
 
 const api_website = "https://api.dictionaryapi.dev/api/v2/entries/en/"
 
+const toggleButton = document.querySelector(".toggle-button")
+const toggler = toggleButton.querySelector(".toggler")
+const toggleIcon = toggleButton.querySelector(".toggle-icon")
+toggleButton.addEventListener("click", ()=>{
+    toggler.classList.toggle("left")
+    if (toggleIcon.classList.contains("fa-moon")) {
+      toggleIcon.classList = "fa-solid fa-sun"
+      localStorage.setItem("theme", "dark")
+      setColorScheme()
+  }
+    else {
+      toggleIcon.classList = "fa-solid fa-moon"
+      localStorage.setItem("theme", "light")
+      setColorScheme()
+  }
+
+})
+
+
 searchbar.addEventListener("submit", function(e){
 e.preventDefault()
 TARGET_WORD = wordInput.value
@@ -136,7 +155,6 @@ linked_words.forEach(bindEventListener)
 function bindEventListener(word){
   word.addEventListener("click", function(){
     wordInput.value = word.textContent
-    console.log(wordInput.value)
     searchButton.click()
 
   })
@@ -144,7 +162,6 @@ function bindEventListener(word){
   })
 } catch (error) {
 	console.error(error);
-  console.log(error.message)
 }
 })
 
@@ -152,18 +169,15 @@ function bindEventListener(word){
 
 // // Detect the user's preferred theme
 
-
-let toggleButton = document.getElementById("toggle-button")
-let toggleIcon = toggleButton.querySelector("i")
-
-function detectColorScheme() {
+function setColorScheme() {
   var theme = "light"; // Default to light
 
   // Check if a theme is set in local storage
   if (localStorage.getItem("theme")) {
       if (localStorage.getItem("theme") == "dark") {
           theme = "dark";
-      }
+
+      } 
   } else if (!window.matchMedia) {
       // MatchMedia method not supported
       return false;
@@ -174,7 +188,13 @@ function detectColorScheme() {
 
   // Set the document with a data-theme attribute for dark theme
   if (theme == "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
+      document.documentElement.setAttribute("theme", "dark");
   }
+  else document.documentElement.setAttribute("theme", "light");
 }
-detectColorScheme()
+setColorScheme()
+
+if (document.documentElement.getAttribute("theme")=="dark"){
+  toggler.classList.toggle("left")
+  toggleIcon.classList = "fa-solid fa-sun"
+}

@@ -1,0 +1,33 @@
+
+.toggle-button {
+    margin-top: 10px;
+    background-color: white;
+    width: 45px;
+    height: 25px;
+    position: relative;
+    border-radius: 15px;
+    transition: background-color 0.5s;
+
+}
+
+.toggler {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 2.5px;
+    left: 2.5px;
+    transition: all 0.5s;
+}
+
+.toggler i {
+    font-size: 20px;
+    color: var(--font-purple);
+    transition: all 0.5s;
+}
+
+.left {
+    transform: translateX(20px) rotate(180deg);
+}

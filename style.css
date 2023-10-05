@@ -7,15 +7,15 @@
     --bg-purple-hover: rgba(194, 123, 245, 0.7);
     --font-purple:  #aa42f5;
 }
- @media (prefers-color-scheme: dark) {
-    :root{
+
+:root[theme="dark"] {
     
+    background-color: black;
     --bg-color: black;
     --font-color: white;
     --header-color: rgb(24, 41, 41);
-    }
+    
 } 
-
 
 body {
     font-family: Manrope, Tahoma;
@@ -139,16 +139,14 @@ form {
     background-color: rgba(170, 66, 245,0.5);
     color: white;
     border-radius: 5px;
-    
     box-shadow: 0px 0px 25px 5px var(--font-purple);
-    ;
+    
 
 }
 
 footer {
     text-align: center;
     height: 50px;
-    /* max-width: 700px; */
     margin: auto;
     display: flex;
     justify-content: center;
@@ -157,8 +155,7 @@ footer {
     flex-wrap: wrap;
     background-color: var(--header-color);
 
-    /* temporary
-    color: black; */
+
 }
 
 @media (max-width:375px) {
